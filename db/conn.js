@@ -4,7 +4,6 @@ import express from "express";
 
 dotenv.config(); //
 const dbUrl = process.env.ATLAS_URL;
-
 //------------------------------
 const connectDB = async () => {
   try {
@@ -18,7 +17,7 @@ const connectDB = async () => {
     process.exit(1);
   }
 };
-//-----------------
+//-------------------------------
 let db = mongoose.connection;
 db.on("connected", () => {
   console.log("db connected to mongodb");
@@ -34,5 +33,5 @@ process.on("SIGINT", async () => {
   console.log("Mongoose connection closed due to app termination");
   process.exit(1);
 });
-
+//---------------->export
 export default connectDB;
