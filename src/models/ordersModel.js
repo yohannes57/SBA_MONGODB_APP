@@ -4,7 +4,7 @@ const orderSchema = mongoose.Schema({
   customerId: {
     type: mongoose.Schema.Types.ObjectId,
     ref: "Customer",
-    required: true,
+    required: [true, "customerId is required,who is ordering?"],
     index: true,
   },
   productList: [
@@ -12,7 +12,7 @@ const orderSchema = mongoose.Schema({
       productId: {
         type: mongoose.Schema.Types.ObjectId,
         ref: "Product",
-        required: true,
+        required: [true, "productId required ,what product ?"],
         index: true,
       },
       quantity: {

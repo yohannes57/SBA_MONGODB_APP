@@ -3,13 +3,13 @@ import mongoose from "mongoose";
 const customerSchema = new mongoose.Schema({
   name: {
     type: String,
-    required: true,
+    required: [true, "name required"],
     index: true,
   },
   email: {
     type: String,
     required: true,
-    unique: true,
+    unique: [true, "email should be unique,please try with a different email"],
     index: true,
   },
   address: {
