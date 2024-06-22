@@ -5,6 +5,7 @@ const orderSchema = mongoose.Schema({
     type: mongoose.Schema.Types.ObjectId,
     ref: "Customer",
     required: true,
+    index: true,
   },
   productList: [
     {
@@ -12,6 +13,7 @@ const orderSchema = mongoose.Schema({
         type: mongoose.Schema.Types.ObjectId,
         ref: "Product",
         required: true,
+        index: true,
       },
       quantity: {
         type: Number,
@@ -22,12 +24,14 @@ const orderSchema = mongoose.Schema({
   orderDate: {
     type: Date,
     default: Date.now,
+    index: true,
   },
   totalPrice: {
     type: Number,
     required: true,
   },
 });
-
+orderSchema.index({ customerId: 1, orderDate: -1 });
+//model
 const Order = mongoose.model("Order", orderSchema);
 export default Order;
