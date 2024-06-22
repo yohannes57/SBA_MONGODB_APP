@@ -2,7 +2,7 @@
 
 ## Description
 
-The Online Store API is a RESTful API for managing an online store. The API supports CRUD operations for Customers, Products, and Orders, allowing for the creation, retrieval, updating, and deletion of data in a MongoDB database.
+The Online Store API is a RESTful API for managing an online store. The API supports CRUD operations for Customers, Products, and Orders, allowing for the creation, retrieval, updating, and deletion of data in a MongoDB using MONGOOSE Library.
 
 ## Table of Contents
 
@@ -30,7 +30,7 @@ The Online Store API is a RESTful API for managing an online store. The API supp
    ```
 2. Navigate to the project directory:
    ```sh
-   cd online-store-api
+   cd to your directory,where every you cloned it
    ```
 3. Install dependencies:
    ```sh
