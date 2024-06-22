@@ -3,6 +3,7 @@ import mongoose from "mongoose";
 import dotenv from "dotenv";
 import connectDB from "../db/conn.js";
 import routerProduct from "./routes/productRoute.js";
+import routerCustomer from "./routes/customerRoute.js";
 
 //
 dotenv.config();
@@ -14,6 +15,7 @@ app.use(express.json());
 
 //router
 app.use("/", routerProduct);
+app.use("/", routerCustomer);
 
 //home url
 app.get("/", (req, res) => {
