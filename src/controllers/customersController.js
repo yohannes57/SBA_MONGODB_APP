@@ -4,11 +4,12 @@ import Cutomer from "../models/customersModel.js";
 //--------------->create customer
 export const createCustomer = async (req, res) => {
   try {
-    const { name, email, address } = req.body;
+    const { name, email, address, orderHistory } = req.body;
     const customer = Cutomer.create({
       name: name,
       email: email,
       address: address,
+      orderHistory: orderHistory || [],
     });
     console.log(customer);
     res.status(201).json({ customer: customer });

@@ -4,6 +4,7 @@ import dotenv from "dotenv";
 import connectDB from "../db/conn.js";
 import routerProduct from "./routes/productRoute.js";
 import routerCustomer from "./routes/customerRoute.js";
+import routerOrder from "./routes/orderRoute.js";
 
 //
 dotenv.config();
@@ -14,8 +15,9 @@ connectDB();
 app.use(express.json());
 
 //router
-app.use("/", routerProduct);
-app.use("/", routerCustomer);
+app.use("/product", routerProduct);
+app.use("/customer", routerCustomer);
+app.use("/order", routerOrder);
 
 //home url
 app.get("/", (req, res) => {
